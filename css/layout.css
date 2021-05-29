@@ -1,0 +1,54 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+img, object, embed, video {
+	max-width: 100%;
+}
+header {
+	margin-bottom: 10px;
+	width: 100%;
+}
+header img {
+	width: 100%;
+}
+body {
+    text-align: left;
+    width: 100%;
+    margin: auto;
+}
+form{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    border-radius: 3px;
+}
+input#login{
+    background-color: cornflowerblue;
+    font-size: 20px;
+    width: 90%;
+    height: 45px;
+    margin: 0.5rem;
+}
+input{
+    background-color: cornflowerblue;
+    font-size: 20px;
+    width: 90%;
+    height: 45px;
+    margin: 0.5rem;
+}
+label{
+    font-size: 20px;
+}
+select{
+    font-size: 20px;
+}
