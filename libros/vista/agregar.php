@@ -7,6 +7,9 @@
     <meta charset="UTF-8">
     <title>Agregar Libro</title>
     <script>
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"
         $(function(){
             // Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
             $("#adicional").on('click', function(){
@@ -15,6 +18,26 @@
             
         });
 	</script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            recargarLista();
+            $('#autor').on('click', function(){
+                recargarLista();
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        function recargarLista(){
+            $.ajax({
+                type:"POST",
+                url:"../controlador/datos_autor.php",
+                data:"continente=" + $('#autor').val(),
+                success:function(r){
+                    $('#nacionalidad').html(r);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <?php
@@ -36,13 +59,13 @@
         <br><label for="paginas">Número de Páginas (*)</label>
         <input type="text" id="paginas" name="paginas" value="" placeholder="Ingrese el números de páginas"/>
         <h2>Datos del Capítulo</h2>
-        <from method="POST">
-        <h3 class="bg-primary text-center pad-basic no-btm">Nuevo Capítulo</h3>
+        <from method="POST">          
         <table class="table bg-info"  id="tabla">
 		<tr class="fila-fija">
-			<td><input required name="numero[]" placeholder="Número"/></td>
-			<br><td><input required name="titulo[]" placeholder="Título"/></td>
+			<td><input required name="numero[]" placeholder="Número del Capítulo"/></td>
+			<br><td><input required name="titulo[]"  placeholder="Título"/></td>
 			<br><td><select id="autor" name="autor[]">
+            <option>Seleccione</option>
             <?php
                 while ($row = $result->fetch_assoc()){
                     $nombre = $row['aut_nombre'];
@@ -50,15 +73,9 @@
                 }                
             ?>
             </select></td>
+            <td><div name="nacionalidad" id="nacionalidad"></div></td>
 		</tr>
 		</table>
-            <?php
-                while ($row = $result->fetch_assoc()){
-                    $nombre = $row['aut_nombre'];
-                    echo("<option>$nombre</option>");
-                }
-                $conn->close();                
-            ?>
         </select>
         <div class="btn-der">
         <br><button id="adicional" name="adicional" type="button" class="btn btn-warning"> Agregar Nuevo Capítulo </button>
