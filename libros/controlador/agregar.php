@@ -19,16 +19,11 @@
     $sql =  "INSERT INTO libro VALUES (0, '$nombre', '$isbn', '$paginas')";
     echo($sql);
     if ($conn->query($sql) === TRUE) {
-        echo "<h1>OLibro Ingresado</h1>";
-        header("Location agregar-capitulo.php");
+        echo "<h1>Libro Ingresado</h1>";
     } else {
         echo "<p class='error'>Error: " . mysqli_error($conn) . "</p>";
     }
     $conn->close();
-
-
-
-
 
     include '../../config/conexionBD.php';
     $sql3= "select lib_id FROM libro where lib_nombre='$nombre';";
@@ -66,7 +61,6 @@
                 }
             }
         }
-        echo($id_autor);
         //// CONCATENAR LOS VALORES EN ORDEN PARA SU FUTURA INSERCIÓN ////////
         $valores='("'.$id_u.'","'.$numero.'","'.$titulo.'", "'.$id.'","'.$id_autor.'"),';
 
@@ -80,8 +74,7 @@
         
         $sqlRes = $conn->query($sql2) or mysql_error();
 
-        
-        // Up! Next Value
+        // Siguiente Capitulo
         $item1 = next( $items1 );
         $item2 = next( $items2 );
         $item3 = next( $items3 );
