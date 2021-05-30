@@ -1,18 +1,11 @@
-*{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: scroll; 
+
 }
 body{
-	width: 100%;
-	max-width: 100%;
-	padding-left: 0.9%;
-	padding-right: 0.9%;
-	margin: 0px auto auto auto;
-	clear: none;
-	float: none;
 	background-color: white;
+    font-family: 'Titillium Web', sans-serif;
 }
 footer{
     width: 100%;
@@ -22,9 +15,10 @@ footer{
 	border-top: 10px solid cornflowerblue;
     border-bottom: 30px solid cornflowerblue;
     border-radius:30px ;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: cornflowerblue;
     color:black;
+    box-shadow:0 4px 10px 4px;
+    border-radius: 20px;
 }
 img, object, embed, video {
 	max-width: 100%;
@@ -36,33 +30,41 @@ header {
 header img {
 	width: 100%;
 }
-nav ul li {
-    display: table-cell;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 10%;
-    text-align: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-style: solid;
-    background-color: darkgoldenrod;  
+button{
+    border:none;
+	padding:20px, 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+    font-size: 20px;
+    height: 60px;
+    margin: 10px;
+    border: 5px solid #999;
+    border-radius:  15px;
+    -webkit-appearance: none;
 }
-nav li{
-     color: black;
-}
-nav {
-    display: table;
+table{
     width: 100%;
-    margin: 2 auto;
-    float: none;
+    text-align:center;
+    border-collapse:collapse;
 }
-nav ul {
-    display: table-row;
-    margin: 0;
+table, td{
+    text-align: center;
+    border-spacing: 0;
+    padding: 0.3em;
 }
-nav ul li:last-of-type {
-    margin-right: 10%;
+table, td, tr{
+    text-align: center;
+    width: 14%;
+    padding: 0.3em;
 }
-a{
-    color:black;
-    font-size: larger;
+select{
+    border:none;
+	padding:20px, 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+    font-size: 20px;
+    height: 60px;
+    margin: 10px;
+    border: 5px solid #999;
+    border-radius:  15px;
 }
