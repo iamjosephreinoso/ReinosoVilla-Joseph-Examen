@@ -13,7 +13,7 @@
         $(function(){
             // Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
             $("#adicional").on('click', function(){
-            $("#tabla tbody tr:eq(0)").clone().removeClass('fila-fija').appendTo("#tabla");
+            $("#tabla tbody tr:eq(0)").clone(true).insertBefore("#tabla");
             });
             
         });
@@ -49,7 +49,7 @@
     <a href="../../index.html"><img src="../../images/principal.jpg"></a>
     </header>
     <br>
-    <form id="formulario01" method="POST" action="../controlador/agregar.php">
+    <form id="formulario02" method="POST" action="../controlador/agregar.php">
     <h1>Agregar Libro</h1>
      </select>
         <br><label for="nombre">Nombre (*)</label>

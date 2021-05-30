@@ -5,6 +5,7 @@
     echo("<h1>Resultado de la Búsqueda</h1>");
     $sql="SELECT aut_id FROM autor WHERE aut_nombre = '$autor';";
     $result = $conn->query($sql);
+    $id_autor = 0;
     while ($row1 = $result->fetch_assoc()){
         if($row1['aut_id']){
             $id_autor = $row1['aut_id'];
@@ -43,6 +44,6 @@
         echo " <td colspan='8'> No existen usuarios registradas en el sistema </td>";
         echo "</tr>";
     }
-    echo "</table>";
+    echo "</table><br><br><br>";
         $conn->close();
 ?>

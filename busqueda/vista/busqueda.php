@@ -16,7 +16,7 @@
     -->
     <br>
     <form onsubmit="return buscarA()">
-        <div id="Busqueda" align="center"><h1>Buscar por Autor</h1></div>
+        <h1>Buscar Libro - Ingrese el Autor</h1>
         <br>
         <input type="text" id="autor" name="autor" value="">
         <input type="button" id="buscar" name="buscar" value="Buscar" onclick="buscarA()" >
