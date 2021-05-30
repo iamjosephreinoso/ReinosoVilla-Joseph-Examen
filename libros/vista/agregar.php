@@ -56,7 +56,8 @@
                 while ($row = $result->fetch_assoc()){
                     $nombre = $row['aut_nombre'];
                     echo("<option>$nombre</option>");
-                }                
+                }
+                $conn->close();                
             ?>
         </select>
         <div class="btn-der">
