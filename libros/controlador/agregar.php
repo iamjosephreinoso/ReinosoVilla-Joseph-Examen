@@ -17,7 +17,6 @@
     $isbn = isset($_POST["isbn"]) ? mb_strtoupper(trim($_POST["isbn"]), 'UTF-8') : null;
     $paginas = isset($_POST["paginas"]) ? mb_strtoupper(trim($_POST["paginas"]), 'UTF-8') : null;
     $sql =  "INSERT INTO libro VALUES (0, '$nombre', '$isbn', '$paginas')";
-    echo($sql);
     if ($conn->query($sql) === TRUE) {
         echo "<h1>Libro Ingresado</h1>";
     } else {
