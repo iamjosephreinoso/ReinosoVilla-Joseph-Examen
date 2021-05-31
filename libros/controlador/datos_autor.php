@@ -6,7 +6,7 @@
 		    where aut_nombre='$continente'";
 
 	$result=mysqli_query($conexion,$sql);
-	$cadena="<label></label>";
+	$cadena="";
 	while ($ver=mysqli_fetch_array($result)) {
 		$cadena=$cadena.'<input type="text" value='.$ver['aut_nacionalidad'].' disabled>';
     }

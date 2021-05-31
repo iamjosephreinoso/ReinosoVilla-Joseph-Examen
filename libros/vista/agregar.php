@@ -13,8 +13,14 @@
         $(function(){
             // Clona la fila oculta que tiene los campos base, y la agrega al final de la tabla
             $("#adicional").on('click', function(){
-            $("#tabla tbody tr:eq(0)").clone(true).insertBefore("#tabla");
-            });
+					$("#tabla tr:eq(0)").clone().appendTo("#tabla");
+				});
+			 
+				// Evento que selecciona la fila y la elimina 
+				$(document).on("click",".eliminar",function(){
+					var parent = $(this).parents().get(0);
+					$(parent).remove();
+				});
             
         });
 	</script>
@@ -59,13 +65,13 @@
         <br><label for="paginas">Número de Páginas (*)</label>
         <input type="text" id="paginas" name="paginas" value="" placeholder="Ingrese el números de páginas"/>
         <h2>Datos del Capítulo</h2>
-        <from method="POST">          
+        <from method="POST">   
         <table class="table bg-info"  id="tabla">
 		<tr class="fila-fija">
 			<td><input required name="numero[]" placeholder="Número del Capítulo"/></td>
 			<br><td><input required name="titulo[]"  placeholder="Título"/></td>
 			<br><td><select id="autor" name="autor[]">
-            <option>Seleccione</option>
+            <option>Selecionar</option>
             <?php
                 while ($row = $result->fetch_assoc()){
                     $nombre = $row['aut_nombre'];
@@ -73,7 +79,8 @@
                 }                
             ?>
             </select></td>
-            <td><div name="nacionalidad" id="nacionalidad"></div></td>
+            <td name="nacionalidad" id="nacionalidad"></td>
+            <td class="eliminar"><input type="button" value="Eliminar"/></td>
 		</tr>
 		</table>
         </select>
